@@ -1,0 +1,37 @@
+﻿@model ResultModel
+
+@{
+    ViewData["Title"] = " Parser page";
+}
+
+<div class="text-center">
+    @if (Model != null)
+    {
+        <h1 class="h1-header">Это мой парсер</h1>
+        <h2 class="h2-header">Вводи здесь свою строку:</h2>
+
+        <form class="parser-button" asp-area="" asp-controller="Home" asp-action="TryParse" method="post">
+            <input class="input-field" type="text" name="input" value="@Model.Input" />
+            @if (Model.Message != null)
+            {
+                <div class="result">
+                    <p class="text hidden-text">Результат:</p>
+                    <p class="text hidden-text">@Model.Value</p>
+                    @if (Model.Value != null)
+                    {
+                        <p class="text hidden-text" style="color:green;">@Model.Message</p>
+                    }
+                    else
+                    {
+                        <p class="text hidden-text" style="color:red;">@Model.Message</p>
+                    }
+                </div>
+            }
+            <input class="input-field-button" type="submit" value="Try parse" />
+        </form>
+    }
+    else
+    {
+        <p class="text">Модели нету!</p>
+    }
+</div>
