@@ -9,7 +9,6 @@
   <ItemGroup>
     <ProjectReference Include="..\ParserSystem\ParserSystem.csproj" />
     <ProjectReference Include="..\Resources\Resources.csproj" />
-    <ProjectReference Include="..\System\System.csproj" />
   </ItemGroup>
 
 </Project>

@@ -2,7 +2,7 @@
 {
     public class Symbol
     {
-        private const string errorMessage = "Символ не может одновременно иметь более одного значения.";
+        private const string ErrorMessage = "Символ не может одновременно иметь более одного значения.";
 
         private char? unarySymbol;
         public char? UnarySymbol
@@ -11,7 +11,7 @@
             {
                 if (decimalSeparator != null && groupSeparator != null && number != null)
                 {
-                    throw new ApplicationException(errorMessage);
+                    throw new ApplicationException(ErrorMessage);
                 }
                 return unarySymbol;
             }
@@ -33,7 +33,7 @@
             {
                 if (decimalSeparator != null && groupSeparator != null && unarySymbol != null)
                 {
-                    throw new ApplicationException(errorMessage);
+                    throw new ApplicationException(ErrorMessage);
                 }
                 return number;
             }
@@ -54,7 +54,7 @@
             {
                 if (number != null && groupSeparator != null && unarySymbol != null)
                 {
-                    throw new ApplicationException(errorMessage);
+                    throw new ApplicationException(ErrorMessage);
                 }
                 return decimalSeparator;
             }
@@ -75,7 +75,7 @@
             {
                 if (number != null && decimalSeparator != null && unarySymbol != null)
                 {
-                    throw new ApplicationException(errorMessage);
+                    throw new ApplicationException(ErrorMessage);
                 }
                 return groupSeparator;
             }
